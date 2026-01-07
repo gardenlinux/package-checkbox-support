@@ -1,0 +1,14 @@
+UPSTREAM_VERSION="v6.0.0"
+
+upstream=$(mktemp -d)
+git clone -b "$UPSTREAM_VERSION" --depth=1 https://github.com/canonical/checkbox.git "$upstream" 
+pushd "$upstream"
+git sparse-checkout set checkbox-support
+popd
+
+import_src "$upstream/checkbox-support"
+
+version=2.8
+version_suffix="gl0"
+
+apply_patches

@@ -1,0 +1,2 @@
+export DEB_BUILD_OPTIONS="nodoc noudeb" 
+export DEB_BUILD_PROFILES="nodoc noudeb"
